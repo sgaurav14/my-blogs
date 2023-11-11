@@ -3,6 +3,7 @@ title: "Getting Started with Git: A Beginner's Guide"
 datePublished: Sat Nov 11 2023 16:53:03 GMT+0000 (Coordinated Universal Time)
 cuid: clouacfhu000809jp606i5vm0
 slug: getting-started-with-git-a-beginners-guide
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1699722206117/26581c76-b33f-43dd-98bb-1bba76afcf55.webp
 tags: git, devops
 
 ---
