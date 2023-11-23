@@ -3,7 +3,7 @@ title: "Docker Volumes: A Beginner's Guide"
 datePublished: Thu Nov 23 2023 16:58:05 GMT+0000 (Coordinated Universal Time)
 cuid: clpbft4jl000509la7zwchu63
 slug: docker-volumes-a-beginners-guide
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1700758603410/6004498c-7972-4855-9fe4-b55ac68ee776.webp
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1700759489390/0c79d2b1-1d8d-4283-b0c7-70813d80e2af.png
 tags: docker, docker-volume, 90daysofdevops
 
 ---
