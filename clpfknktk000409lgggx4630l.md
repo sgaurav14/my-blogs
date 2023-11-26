@@ -10,6 +10,8 @@ tags: docker, devops, docker-images, docker-network, 90daysofdevops, two-tier-ap
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1701007615085/1b8194cb-9dc6-4726-b4f4-62c33bd61fc3.png align="center")
 
+[Siddhartha Gaurav](https://in.linkedin.com/in/siddhartha-gaurav-20354878?trk=profile-badge)
+
 ### What is a two-tier application??
 
 A two-tier application refers to a software architecture where the application is divided into two main parts or tiers: the client (or front-end) tier and the server (or back-end) tier. In the case described, the two tiers are represented by:
@@ -21,8 +23,7 @@ A two-tier application refers to a software architecture where the application i
 
 The two-tier architecture is a common setup, especially in simpler applications. It separates the user interface and application logic from the data storage and retrieval, making it easier to manage and scale each tier independently.
 
-###   
-Deploying a two-tier application
+### Deploying a two-tier application
 
 We're setting up a Python Flask app that talks to a MySQL database. There are two parts to this setup: one container for the app and another for the database. These two containers are isolated to each other.
 
@@ -44,11 +45,10 @@ So, let's begin and deploy our first two-tier application -
     ubuntu@ip-172-31-47-90:~/projects$ 
     ubuntu@ip-172-31-47-90:~/projects$ ls
     two-tier-flask-app
-    ubuntu@ip-172-31-47-90:~/projects$ 
+    ubuntu@ip-172-31-47-90:~/projects$
     ```
     
-
-1. Navigate to the 'two-tier-flask-app' directory using the 'cd' command in your terminal or command prompt:
+2. Navigate to the 'two-tier-flask-app' directory using the 'cd' command in your terminal or command prompt:
     
     ```bash
     ubuntu@ip-172-31-47-90:~/projects$ cd two-tier-flask-app/
@@ -56,10 +56,10 @@ So, let's begin and deploy our first two-tier application -
     ubuntu@ip-172-31-47-90:~/projects/two-tier-flask-app$ ls
     Dockerfile  Jenkinsfile  README.md  app.py  docker-compose.yml  eks-manifests  k8s  message.sql  requirements.txt  templates
     ubuntu@ip-172-31-47-90:~/projects/two-tier-flask-app$ 
-    ubuntu@ip-172-31-47-90:~/projects/two-tier-flask-app$ 
+    ubuntu@ip-172-31-47-90:~/projects/two-tier-flask-app$
     ```
     
-2. Let's create a dockerfile for our application.
+3. Let's create a dockerfile for our application.
     
     ```dockerfile
     
@@ -113,7 +113,7 @@ So, let's begin and deploy our first two-tier application -
     CMD ["python", "app.py"]
     ```
     
-3. Build an image using the Dockerfile you created. Open a terminal or command prompt in the project directory and run the following command:
+4. Build an image using the Dockerfile you created. Open a terminal or command prompt in the project directory and run the following command:
     
     ```bash
     
@@ -249,7 +249,7 @@ So, let's begin and deploy our first two-tier application -
     ubuntu@ip-172-31-47-90:~/projects/two-tier-flask-app$
     ```
     
-4. To list the Docker images you've built, run the following command in your terminal or command prompt:
+5. To list the Docker images you've built, run the following command in your terminal or command prompt:
     
     ```bash
     ubuntu@ip-172-31-47-90:~/projects/two-tier-flask-app$ docker images
@@ -259,7 +259,7 @@ So, let's begin and deploy our first two-tier application -
     ubuntu@ip-172-31-47-90:~/projects/two-tier-flask-app$
     ```
     
-5. To deploy the MySQL container, use the following command in your terminal or command prompt. Make sure to replace the placeholder values with your specific configuration. These environment variables are crucial for setting up the MySQL container:
+6. To deploy the MySQL container, use the following command in your terminal or command prompt. Make sure to replace the placeholder values with your specific configuration. These environment variables are crucial for setting up the MySQL container:
     
     ```bash
     ubuntu@ip-172-31-47-90:~/projects/two-tier-flask-app$ docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=test@123 -e MYSQL_DATABASE-testdb -e MYSQL_USER=admin -e MYSQL_PASSWORD=admin mysql:latest
@@ -303,7 +303,7 @@ So, let's begin and deploy our first two-tier application -
     
     Once the command is executed successfully, the container is up and running, ready to handle database operations.
     
-6. Now that our MySQL container is up and running, let's deploy our Flask application container in a similar manner. We'll use the 'flask-app' image that we created earlier from the Dockerfile.
+7. Now that our MySQL container is up and running, let's deploy our Flask application container in a similar manner. We'll use the 'flask-app' image that we created earlier from the Dockerfile.
     
     Execute the following command in your terminal or command prompt:
     
@@ -315,7 +315,7 @@ So, let's begin and deploy our first two-tier application -
     CONTAINER ID   IMAGE              COMMAND                  CREATED          STATUS          PORTS                                                  NAMES
     acd1affda524   flask-app:latest   "python app.py"          6 seconds ago    Up 3 seconds    0.0.0.0:5000->5000/tcp, :::5000->5000/tcp              flask-app
     46cff555a02d   mysql:latest       "docker-entrypoint.s…"   10 minutes ago   Up 10 minutes   0.0.0.0:3306->3306/tcp, :::3306->3306/tcp, 33060/tcp   awesome_shaw
-    ubuntu@ip-172-31-47-90:~/projects/two-tier-flask-app$ 
+    ubuntu@ip-172-31-47-90:~/projects/two-tier-flask-app$
     ```
     
     In the above command, we are deploying a container for the 'flask-app' using the image created earlier. The application within the container will be accessible on port 5000, and we've mapped that to the host system using the flag (-p 5000:5000).
@@ -337,7 +337,7 @@ So, let's begin and deploy our first two-tier application -
     
     After running this command, the Flask application container will be up and running, ready to serve requests on port 5000, interacting with the MySQL container using the provided configuration.
     
-7. Now, let's access the application from your host by opening a web browser and navigating to the IP address of your EC2 instance followed by port 5000 (e.g., [`http://your_ec2_ip:5000`](http://your_ec2_ip:5000)).
+8. Now, let's access the application from your host by opening a web browser and navigating to the IP address of your EC2 instance followed by port 5000 (e.g., [`http://your_ec2_ip:5000`](http://your_ec2_ip:5000)).
     
     In the case of an EC2 instance, ensure that you have allowed traffic on port 5000 in your Security Group settings. This step is crucial for external access to the Flask application. If you haven't done so already, add an inbound rule to allow traffic on port 5000.
     
@@ -351,7 +351,7 @@ So, let's begin and deploy our first two-tier application -
     
     The error you're encountering indicates a communication issue between the Flask application and the MySQL database. This is likely due to both containers running on separate networks.
     
-8. To resolve this, consider creating a Docker network and connecting both containers to it. This enables them to communicate seamlessly. Here are the steps:
+9. To resolve this, consider creating a Docker network and connecting both containers to it. This enables them to communicate seamlessly. Here are the steps:
     
     ```bash
     ubuntu@ip-172-31-47-90:~$ docker network ls
@@ -369,7 +369,7 @@ So, let's begin and deploy our first two-tier application -
     9cab723192ad   host              host      local
     87f298874199   none              null      local
     0199a9102bea   two-tier-app-nw   bridge    local
-    ubuntu@ip-172-31-47-90:~$ 
+    ubuntu@ip-172-31-47-90:~$
     ```
     
     In the previous step, we established a bridge network named 'two-tier-app-nw' using the following Docker command: `docker network create -d bridge two-tier-app-nw`
@@ -378,7 +378,7 @@ So, let's begin and deploy our first two-tier application -
     
     This network will serve as the shared space for our MySQL and Flask application containers, facilitating seamless communication between them
     
-9. Let's inspect the 'two-tier-app-nw' network to gather information about its configuration, including the connected containers. Execute the following command in your terminal or command prompt:
+10. Let's inspect the 'two-tier-app-nw' network to gather information about its configuration, including the connected containers. Execute the following command in your terminal or command prompt:
     
     ```bash
     ubuntu@ip-172-31-47-90:~$ docker network inspect two-tier-app-nw 
@@ -412,12 +412,12 @@ So, let's begin and deploy our first two-tier application -
             "Labels": {}
         }
     ]
-    ubuntu@ip-172-31-47-90:~$ 
+    ubuntu@ip-172-31-47-90:~$
     ```
     
     The inspection result indicates that currently, no containers are bound to the 'two-tier-app-nw' network. To ensure proper communication between our MySQL and Flask application containers, both containers need to be connected to this network.
     
-10. Let's create the necessary containers within our newly created bridge network named 'two-tier-app-nw.' Execute the following commands to launch the containers in this specific network:
+11. Let's create the necessary containers within our newly created bridge network named 'two-tier-app-nw.' Execute the following commands to launch the containers in this specific network:
     
     ```bash
     ubuntu@ip-172-31-47-90:~$ docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=test@123 -e MYSQL_DATABASE=testdb -e MYSQL_USER=admin -e MYSQL_PASSWORD=admin --network two-tier-app-nw --name mysql mysql:latest
@@ -431,12 +431,12 @@ So, let's begin and deploy our first two-tier application -
     8a6c4b1e8b09   mysql:latest       "docker-entrypoint.s…"   40 seconds ago   Up 39 seconds   0.0.0.0:3306->3306/tcp, :::3306->3306/tcp, 33060/tcp   mysql
     d61530c6fde9   flask-app:latest   "python app.py"          9 minutes ago    Up 9 minutes    0.0.0.0:5000->5000/tcp, :::5000->5000/tcp              flask-app
     ubuntu@ip-172-31-47-90:~$ 
-    ubuntu@ip-172-31-47-90:~$ 
+    ubuntu@ip-172-31-47-90:~$
     ```
     
     \-In the preceding command, we utilized the `--network` option to explicitly designate the network to which the containers should be connected and operate within. This ensures that both the MySQL and Flask application containers are part of the same network, enabling seamless communication between them.
     
-11. Let's inspect the 'two-tier-app-nw' bridge network again to ensure that the containers are now connected to it. Execute the following command in your terminal or command prompt:
+12. Let's inspect the 'two-tier-app-nw' bridge network again to ensure that the containers are now connected to it. Execute the following command in your terminal or command prompt:
     
     ```bash
     ubuntu@ip-172-31-47-90:~$ docker network inspect two-tier-app-nw 
@@ -485,12 +485,12 @@ So, let's begin and deploy our first two-tier application -
             "Labels": {}
         }
     ]
-    ubuntu@ip-172-31-47-90:~$ 
+    ubuntu@ip-172-31-47-90:~$
     ```
     
     After inspecting the 'two-tier-app-nw' bridge network, we observe that both containers' IP configuration details are listed. This signifies that the MySQL and Flask application containers are successfully connected within the same network, establishing the necessary communication link between them.
     
-12. Now that both containers are successfully connected within the same network, open your web browser and enter the given address: http://your-ip:5000
+13. Now that both containers are successfully connected within the same network, open your web browser and enter the given address: http://your-ip:5000
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1701008003957/819e9554-b9d7-4ef9-8905-848ef5916fea.png align="center")
     
@@ -523,10 +523,10 @@ So, let's begin and deploy our first two-tier application -
     mysql> exit
     Bye
     bash-4.4# exit
-    ubuntu@ip-172-31-47-90:~$ 
+    ubuntu@ip-172-31-47-90:~$
     ```
     
-13. Now, let's again open the app over the web page -
+14. Now, let's again open the app over the web page -
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1701008358802/4c7c9981-1a85-47ec-9fcf-c6c3e9de328e.png align="center")
     
