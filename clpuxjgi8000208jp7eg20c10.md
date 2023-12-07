@@ -86,12 +86,14 @@ When managing multiple instances with similar configurations, the traditional ap
     
     Dec 06 10:08:04 ip-172-31-41-162 systemd[1]: Starting A high performance web server and a reverse proxy server...
     Dec 06 10:08:04 ip-172-31-41-162 systemd[1]: Started A high performance web server and a reverse proxy server.
-    ubuntu@ip-172-31-41-162:/var/www/html$ 
+    ubuntu@ip-172-31-41-162:/var/www/html$
     ```
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1701857415988/85d0d143-894b-4d23-9e05-24314e3e78c7.png align="center")
     
     We configured the Nginx server, and we created an `index.html` file, which is displayed above in the image.
+    
+    **Note** : *You can't get all these softwares in your template because we have done these installations after EC2 creation.*
     
 3. **Prepare the Instance for Template Creation:**
     
@@ -200,7 +202,7 @@ In this practical, we will use the template created earlier and proceed to modif
     
 4. Enter your shell script in the "User data" option:
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1701926902540/f014a439-e8e6-4ac5-a954-91458fe90b6f.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1701939673498/70dc6b40-6d25-45ab-a7cd-ed272b840220.png align="center")
     
     After writing your code, select "Create template version"
     
