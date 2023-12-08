@@ -3,7 +3,7 @@ title: "Scaling Safely: A Simple Guide to Autoscaling, Load Balancers, and Web S
 datePublished: Fri Dec 08 2023 11:32:33 GMT+0000 (Coordinated Universal Time)
 cuid: clpwjs9h0000i08jzcnqkh4wd
 slug: scaling-safely-a-simple-guide-to-autoscaling-load-balancers-and-web-security
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1702035053002/130f78cf-b1e5-47e4-a54d-4c9db2364c65.png
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1702035674487/9c55c22a-f26b-44bb-ada2-e3ca64831b23.png
 tags: aws, load-balancing, auto-scaling-aws, applicationloadbalancer, webapplicationfirewall
 
 ---
