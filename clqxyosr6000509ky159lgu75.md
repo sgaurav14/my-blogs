@@ -178,7 +178,7 @@ Imagine AWS VPC as your own virtual network in the cloud. It allows you to launc
         
     * Now we have to do two things, The first is 'Subnet associations' where we associate the subnets that we want to make public and connect to the internet.
         
-        The second is 'Routes', where we need to add the route of our internet gateway to all the network.
+        The second is 'Routes', where we need to add the route of our internet gateway to the internet.
         
     * Let's do this. First click on 'Subet associations' in the selected route table.
         
@@ -200,7 +200,7 @@ Imagine AWS VPC as your own virtual network in the cloud. It allows you to launc
         
         Click on 'Edit routes'.
         
-    * Click on 'Add route' and give the destination and select target as Internet gateway, it will show your internet gateway ID.
+    * Click on 'Add route' and give the destination which is the internet in our case it is generally taken as 0.0.0.0/0 and select the target as Internet gateway, it will show your Internet gateway ID.
         
         ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1704295654705/f89a6368-0af0-4d39-b832-1d42c3b38864.png align="center")
         
