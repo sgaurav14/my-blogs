@@ -57,13 +57,13 @@ In summary, AWS EC2 is a service that lets you easily and flexibly rent virtual 
     
     **Key pair:** In AWS EC2, a key pair is a set of security credentials that consists of a public key and a private key. This key pair is used to securely connect to and authenticate with your EC2 instances. Let's break down the key concepts:
     
-    1. **Public Key:**
+    * **Public Key:**
         
         * The public key is shared and can be freely distributed. It's used by AWS to encrypt data that can only be decrypted with the corresponding private key.
             
         * When you launch an EC2 instance, you specify the key pair to be associated with the instance. The public key is then embedded in the instance, allowing for secure communication.
             
-    2. **Private Key:**
+    * **Private Key:**
         
         * The private key is kept secret and should only be known to the owner. It's used to decrypt data that was encrypted with the corresponding public key.
             
