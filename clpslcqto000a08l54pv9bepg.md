@@ -69,8 +69,8 @@ In summary, AWS EC2 is a service that lets you easily and flexibly rent virtual 
             
         * You must securely store your private key because it is essential for accessing your EC2 instances. Losing the private key means losing access to the instances associated with that key pair.
             
-    
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1701794885906/923f8002-b83e-43d1-bb48-87e6db78d5e1.png align="center")
+            ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1701794885906/923f8002-b83e-43d1-bb48-87e6db78d5e1.png align="center")
+            
     
     Create a new key pair by providing a name, selecting the key pair type, and choosing the Private key file format. In our example, we are using .pem as the file format.
     
