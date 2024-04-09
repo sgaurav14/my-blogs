@@ -153,7 +153,6 @@ A table is a fundamental structure in a relational database that stores data in 
     Query OK, 0 rows affected (0.093 sec)
     
     MariaDB [students_info]>
-    
     ```
     
 * **Checking a Table:** To view the structure of a table, you can use the `DESCRIBE <table_name>;` or `DESC <table_name>;` command.
@@ -167,6 +166,38 @@ A table is a fundamental structure in a relational database that stores data in 
     | name  | varchar(50) | YES  |     | NULL    |       |
     +-------+-------------+------+-----+---------+-------+
     2 rows in set (0.003 sec)
+    
+    MariaDB [students_info]>
+    ```
+    
+* **Listing the Table:** To view the list of tables in the current database, you can use the `SHOW TABLES;` command.
+    
+    ```sql
+    MariaDB [(none)]> SHOW DATABASES;
+    +--------------------+
+    | Database           |
+    +--------------------+
+    | information_schema |
+    | mysql              |
+    | performance_schema |
+    | students_info      |
+    +--------------------+
+    4 rows in set (0.002 sec)
+    
+    MariaDB [(none)]>
+    MariaDB [(none)]> USE students_info;
+    Reading table information for completion of table and column names
+    You can turn off this feature to get a quicker startup with -A
+    
+    Database changed
+    MariaDB [students_info]>
+    MariaDB [students_info]> SHOW TABLES;
+    +-------------------------+
+    | Tables_in_students_info |
+    +-------------------------+
+    | students                |
+    +-------------------------+
+    1 row in set (0.001 sec)
     
     MariaDB [students_info]>
     ```
@@ -486,23 +517,23 @@ The NULL values and duplicate entries are not allow for the primary key column.
 ### **Auto Increment:**
 
 The `AUTO_INCREMENT` attribute in MySQL automatically generates unique values for a column, typically used for primary keys. It simplifies the process of assigning unique identifiers to records by automatically incrementing the column value for each new record inserted into the table.  
-For example, in the `students`table, the `id` column is often defined with the `AUTO_INCREMENT` attribute:  
+For example, in the `students`table, the `id` column is often defined with the `AUTO_INCREMENT` attribute:
 
 * ```sql
-    MariaDB [students_info]> CREATE TABLE students (id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(50) NOT NULL, class INT NOT NULL DEFAULT 10);
-    Query OK, 0 rows affected (0.076 sec)
-    
-    MariaDB [students_info]> DESC students;
-    +-------+-------------+------+-----+---------+----------------+
-    | Field | Type        | Null | Key | Default | Extra          |
-    +-------+-------------+------+-----+---------+----------------+
-    | id    | int(11)     | NO   | PRI | NULL    | auto_increment |
-    | name  | varchar(50) | NO   |     | NULL    |                |
-    | class | int(11)     | NO   |     | 10      |                |
-    +-------+-------------+------+-----+---------+----------------+
-    3 rows in set (0.004 sec)
-    
-    MariaDB [students_info]>
+      MariaDB [students_info]> CREATE TABLE students (id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(50) NOT NULL, class INT NOT NULL DEFAULT 10);
+      Query OK, 0 rows affected (0.076 sec)
+      
+      MariaDB [students_info]> DESC students;
+      +-------+-------------+------+-----+---------+----------------+
+      | Field | Type        | Null | Key | Default | Extra          |
+      +-------+-------------+------+-----+---------+----------------+
+      | id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+      | name  | varchar(50) | NO   |     | NULL    |                |
+      | class | int(11)     | NO   |     | 10      |                |
+      +-------+-------------+------+-----+---------+----------------+
+      3 rows in set (0.004 sec)
+      
+      MariaDB [students_info]>
     ```
     
 
