@@ -66,6 +66,8 @@ Now, let's take a closer look at how Kubernetes is set up:
         
 3. **Control Plane**: This is the fancy name for all the components that run on the master node. It includes things like the API server, scheduler, and controller manager, which work together to keep everything running smoothly.
     
+4. **kubectl**: Just like the chef's trusty toolkit, `kubectl` is the command-line interface (CLI) used to interact with Kubernetes. With `kubectl`, you can deploy applications, manage clusters, inspect resources, and perform various administrative tasks. It's your go-to tool for controlling Kubernetes clusters and orchestrating containerized applications.
+    
 
 With Containerd included, the architecture becomes even more comprehensive, highlighting how Kubernetes manages containers at the worker node level.
 
